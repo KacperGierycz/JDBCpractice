@@ -22,7 +22,7 @@ public class DemoClass {
 		String url="jdbc:mysql://localhost:3306/aliens";
 		String uname="root";
 		String pass="Zamiec01";
-		String query="SELECT * FROM aliens.student;";
+		String query="SELECT * FROM student;";
 		
 		
 		Class.forName("com.mysql.jdbc.Driver");
@@ -30,10 +30,16 @@ public class DemoClass {
 		Statement st= con.createStatement();
 		ResultSet rs=st.executeQuery(query);
 		
-		rs.next();
-		String name= rs.getString("username");
+		String userData="";
 		
-		System.out.println(name);
+		while(rs.next()) {
+			
+			 userData= rs.getInt(1) +" " +rs.getString(2);
+				
+				System.out.println(userData);
+			
+		}
+		
 		
 		st.close();
 		con.close();
