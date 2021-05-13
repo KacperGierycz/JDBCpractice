@@ -10,6 +10,9 @@ import java.sql.*;
 5.sequre the query-->
 6.proces the result-->
 7.close
+
+DAO Data Acces Object
+*
 */
 
 public class DemoClass {
